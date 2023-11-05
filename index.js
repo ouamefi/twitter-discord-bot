@@ -39,7 +39,7 @@ async function fetchTweets() {
   for(acc of accounts) {
     //console.log(`Fetching Tweets of @${acc.username}...`);
     url = `https://syndication.twitter.com/srv/timeline-profile/screen-name/${acc.username}`
-    const opts = { headers: { cookie: env.USER_COOKIE } };
+    const opts = { headers: { cookie: process.env.USER_COOKIE } };
 
     const response = await fetch(url, opts);
     const responseHTML = await response.text();
